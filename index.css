@@ -1,0 +1,99 @@
+body{
+    background-color: white;
+    color: black;
+    font-family: Montserrat,sans-serif;
+}
+
+.nav-menu{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    text-align: center;
+    overflow: hidden;
+    background-color: gray;
+    /* border: 2px solid red; */
+}
+.nav-menu ul{
+    list-style-type: none;
+       
+}
+.nav-menu li{
+    display: inline;
+    margin-left: 5%;
+    
+}
+.nav-menu ul li a{
+    text-decoration: none;
+    text-align: center;
+    font-size: medium;
+    color: black;
+    letter-spacing: 1.2px;
+}
+.nav-menu ul li a:hover{
+    background-color: bisque;
+}
+.intro{
+    text-align: center;
+    /* padding-top: 10px; */
+    margin-top: 2%;
+}
+.intro img{
+    width: 71%;
+}
+.services-list{
+    width: 90%;
+    margin: 0% auto;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+}
+.s-menu{
+    width: 45%;
+    display: flex;
+}
+.services-list-img{
+    width: 25%;
+}
+
+.services-list-img img{
+    padding: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    max-width: 70px;
+    margin: auto;
+    display: block;
+}
+.services-text{
+    width: 75%;
+    margin-left: 5%;
+}
+#about-me{
+    background-color: rgba(240, 232, 216, 0.984);
+}
+.about-me{
+    display: flex;
+    justify-content: space-between;
+    width:80%;
+    margin: 0% auto;
+}
+.section{
+    width:80%;
+    margin: 0% auto;
+}
+.about-text{
+    width: 60%;
+}
+.chandan-pic{
+    width: 30%;
+}
+.chandan-pic img{
+    margin-top: 10%;
+    width: 75%;
+}
+.bottom{
+    text-align: center;
+    color: grey;
+}
