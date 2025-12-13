@@ -1,142 +1,452 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chandan KUMAR - Freelance Data Scientist and Web Developer</title>
-    <link rel="stylesheet" href="index.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Portfolio de Chandan Kumar — Digital Transformation & AI Solutions Consultant (Paris). KPI industriels, BI, automatisation, IA appliquée." />
+    <title>Chandan Kumar — Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <div class="nav-menu">
-        <ul>
-            <li><a href="#services">SERVICES</a></li>
-            <li><a href="#about-me">ABOUT ME</a></li>
-            <li><a href="#">PORTFOLIO</a></li>
-            <li><a href="#">CONTACT</a></li>
-            <li><a href="index-fr.html">FR</a></li>
-        </ul>    
+    <!-- Top progress bar -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="header" id="top">
+        <div class="container header__inner">
+            <a class="brand" href="#top" aria-label="Retour en haut">
+                <span class="brand__dot" aria-hidden="true"></span>
+                <span class="brand__text">Chandan KUMAR</span>
+            </a>
+            <div class="lang-switch" role="group" aria-label="Language selection">
+                <button class="lang-btn active" data-lang="fr" aria-pressed="true">FR</button>
+                <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <nav class="nav" aria-label="Navigation principale">
+                <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+
+                <ul class="nav__links" id="navLinks">
+                    <li><a href="#about" data-i18n="nav.about">À propos</a></li>
+                    <li><a href="#projects" data-i18n="nav.projects">Projets & impacts</a></li>
+                    <li><a href="#experience" data-i18n="nav.experience">Expériences</a></li>
+                    <li><a href="#skills" data-i18n="nav.skills">Compétences</a></li>
+                    <li><a href="#education" data-i18n="nav.education">Formation</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact" class="pill">Contact</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <main>
+        <section class="hero">
+            <div class="container hero__grid">
+                <div class="hero__left">
+                    <p class="kicker" data-i18n="hero.kicker"></p>
+                    <h1>
+                        <span data-i18n="hero.main"></span>
+                        <span class="grad" data-i18n="hero.grad"></span>
+                        <span data-i18n="hero.main2"></span>
+                    </h1>
+
+                    <p class="hero__subtitle" data-i18n="hero.subtitle"></p>
+
+                    <div class="hero__cta">
+                        <a class="btn btn--primary" href="#projects" data-i18n="buttons.viewProjects"></a>
+                        <a class="btn btn--ghost" href="#contact" data-i18n="buttons.contactMe"></a>
+                        <button class="btn btn--ghost" id="copyEmailBtn" type="button" aria-label="Copier mon email"
+                            data-i18n="buttons.copyEmail"></button>
+                    </div>
+
+                    <div class="hero__chips" aria-label="Points clés">
+                        <span class="chip" data-i18n="buttons.realTimeKPI"> </span>
+                        <span class="chip">Power BI / DAX </span>
+                        <span class="chip">RAG + Vector DB </span>
+                        <span class="chip">Python • SQL • FastAPI </span>
+                    </div>
+                </div>
+
+                <div class="hero__right">
+                    <div class="card heroCard">
+                        <div class="heroCard__top">
+                            <div class="avatar" aria-hidden="true">
+                                <span>CK</span>
+                            </div>
+                            <div>
+                                <p class="heroCard__name">Chandan KUMAR</p>
+                                <p class="heroCard__role" data-i18n="about.job"></p>
+                                <p class="heroCard__loc">Paris, Île-de-France</p>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="metrics">
+                            <div class="metric">
+                                <p class="metric__value"><span data-counter="20">0</span>%</p>
+                                <p class="metric__label" data-i18n="metrix.L1"></p>
+                            </div>
+                            <div class="metric">
+                                <p class="metric__value"><span data-counter="40">0</span>%</p>
+                                <p class="metric__label" data-i18n="metrix.L2"></p>
+                            </div>
+                            <div class="metric">
+                                <p class="metric__value"><span data-counter="30">0</span>%</p>
+                                <p class="metric__label" data-i18n="metrix.L3"></p>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="quickLinks">
+                            <a class="link" target="_blank" rel="noopener"
+                                href="https://www.linkedin.com/in/jesuischandan">LinkedIn</a>
+                            <a class="link" href="#contact">Contact</a>
+                            <a class="link" href="#projects" data-i18n="metrix.L4"></a>
+                        </div>
+                    </div>
+
+                    <div class="note">
+                        <p><strong data-i18n="metrix.L5"></strong> <span data-i18n="metrix.L6"></span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="sectionHead">
+                    <h2 data-i18n="about.head">À propos</h2>
+                    <p data-i18n="about.text"></p>
+                </div>
+
+                <div class="grid2">
+                    <div class="card">
+                        <h3>Ce que je fais (concrètement)</h3>
+                        <ul class="list">
+                            <li>Écosystèmes KPI temps réel (machine/secteur/usine) + dashboards centralisés.</li>
+                            <li>Automatisation de reporting & analyses ad hoc (Power BI, DAX, SQL, Python).</li>
+                            <li>Outils IA appliquée : ticketing intelligent, base de connaissances, RAG diagnostic.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>Ce qui me différencie</h3>
+                        <ul class="list">
+                            <li><strong>Approche terrain</strong> : production / maintenance / engineering, adoption et
+                                standardisation</li>
+                            <li><strong>Focus “valeur”</strong> : impacts mesurables (prod, deals, stockouts,
+                                satisfaction…)</li>
+                            <li><strong>Solution end-to-end</strong> : ingestion → transformation → modèle → API →
+                                dashboard → formation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="sectionHead">
+                    <h2>Projets & impacts</h2>
+                    <p>Les cas ci-dessous sont cliquables : détails, stack, démarche, résultats.</p>
+                </div>
+
+                <div class="toolbar card">
+                    <div class="toolbar__left">
+                        <label class="srOnly" for="searchInput">Rechercher</label>
+                        <input id="searchInput" class="input" type="search"
+                            placeholder="Rechercher : KPI, RAG, Power BI, SQL…" />
+                    </div>
+
+                    <div class="toolbar__right">
+                        <div class="tags" id="tagFilters" aria-label="Filtres par tags"></div>
+                    </div>
+                </div>
+
+                <div class="cards" id="projectGrid" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section" id="experience">
+            <div class="container">
+                <div class="sectionHead">
+                    <h2>Expériences</h2>
+                    <p>Une timeline claire, axée sur les livrables et la collaboration.</p>
+                </div>
+
+                <div class="timeline">
+                    <article class="timelineItem">
+                        <div class="timelineDot" aria-hidden="true"></div>
+                        <div class="timelineBody card">
+                            <div class="timelineTop">
+                                <h3>Aperam — Digital Transformation & AI Solutions Consultant</h3>
+                                <p class="muted">Sep 2024 — Présent • Imphy, France </p>
+                            </div>
+                            <ul class="list">
+                                <li>KPI temps réel + monitoring machine/secteur/usine.
+                                </li>
+                                <li>SIC : tournée toutes les 2h, actions correctives, suivi par shifts</li>
+                                <li>Scale à 27 machines + dashboard centralisé.
+                                </li>
+                                <li>RAG diagnostic : base incidents/causes/solutions + suggestions pour nouveaux
+                                    tickets. </li>
+                            </ul>
+                            <div class="pillRow">
+                                <span class="pillSmall">Python</span><span class="pillSmall">SQL</span><span
+                                    class="pillSmall">Pandas</span>
+                                <span class="pillSmall">FastAPI</span><span class="pillSmall">Chroma</span><span
+                                    class="pillSmall">Gemini API</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="timelineItem">
+                        <div class="timelineDot" aria-hidden="true"></div>
+                        <div class="timelineBody card">
+                            <div class="timelineTop">
+                                <h3>CMA CGM — Data Analyst</h3>
+                                <p class="muted">Mai 2024 — Sep 2024 • Marseille, France
+                                </p>
+                            </div>
+                            <ul class="list">
+                                <li>Dashboard “ALL IN ONE” : KPIs commerciaux/ops, modèle fiable, DAX, harmonisation.
+                                </li>
+                                <li>Dashboard “Customer Follow-Up” : vue 360° client (volume, marge, alertes).
+                                </li>
+                                <li>Automatisation tender matrix (Streamlit + IA interne) : extraction, routes,
+                                    pricing/marge, reco négociation. </li>
+                            </ul>
+                            <div class="pillRow">
+                                <span class="pillSmall">Power BI</span><span class="pillSmall">DAX</span><span
+                                    class="pillSmall">SQL</span>
+                                <span class="pillSmall">Python</span><span class="pillSmall">Streamlit</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="timelineItem">
+                        <div class="timelineDot" aria-hidden="true"></div>
+                        <div class="timelineBody card">
+                            <div class="timelineTop">
+                                <h3>Alpine Elements — Business Data Analyst</h3>
+                                <p class="muted">Juil 2022 — Déc 2022 • Morzine, France
+                                </p>
+                            </div>
+                            <ul class="list">
+                                <li>Reporting hebdo activités / préférences : +20% d’expérience guest.
+                                </li>
+                                <li>Coordination cross-fonction : +15% satisfaction.
+                                </li>
+                                <li>Stock/inventaire : -25% ruptures. </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="timelineItem">
+                        <div class="timelineDot" aria-hidden="true"></div>
+                        <div class="timelineBody card">
+                            <div class="timelineTop">
+                                <h3>Sony India — Business Analyst</h3>
+                                <p class="muted">Juin 2017 — Juil 2019 • Patna, Inde
+                                </p>
+                            </div>
+                            <ul class="list">
+                                <li>Optimisation supply chain : tracking inventaire + pipeline data + visibilité SKU.
+                                </li>
+                                <li>Impact : +30% demand–supply accuracy, réduction des stockouts.
+                                </li>
+                                <li>Système d’incentives data-driven : tracking SQL, adoption culture KPI.
+                                </li>
+                                <li>Impact : +25% ventes Bravia vs 2017. </li>
+                            </ul>
+                            <div class="pillRow">
+                                <span class="pillSmall">SQL</span><span class="pillSmall">Google Sheets</span><span
+                                    class="pillSmall">Analytics</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="section" id="skills">
+            <div class="container">
+                <div class="sectionHead">
+                    <h2>Compétences</h2>
+                    <p>Un mix “tech + delivery + collaboration”</p>
+                </div>
+
+                <div class="grid3">
+                    <div class="card">
+                        <h3>Data & BI</h3>
+                        <ul class="list">
+                            <li>Power BI, DAX, data modeling </li>
+                            <li>Data cleaning, harmonisation</li>
+                            <li>SQL (jointures, réplication, tracking)</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>Automatisation & Back-end</h3>
+                        <ul class="list">
+                            <li>Python (ingestion logs, pipelines) </li>
+                            <li>FastAPI, schedulers event-driven
+                            </li>
+                            <li>Sync GCP Sheets, workflows opérationnels </li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>IA appliquée</h3>
+                        <ul class="list">
+                            <li>Vector DB (Chroma), embeddings, semantic search
+                            </li>
+                            <li>RAG : diagnostic & recommandations </li>
+                            <li>Apps Streamlit + APIs LLM (interne) </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card inlineCard">
+                    <div>
+                        <h3>Soft skills (top)</h3>
+                        <p class="muted">Technical & digital fluency • Structured problem-solving • Collaboration &
+                            teamwork</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section" id="education">
+            <div class="container">
+                <div class="sectionHead">
+                    <h2>Formation & certifications</h2>
+                    <p>Diplômes + certifications orientées data.</p>
+                </div>
+
+                <div class="grid2">
+                    <div class="card">
+                        <h3>Formation</h3>
+                        <ul class="list">
+                            <li><strong>SKEMA Business School</strong> — MSc Digital Business & AI (2021–2024)
+                            </li>
+                            <li><strong>Indian Maritime University</strong> — MBA International Transportation &
+                                Logistic (2019–2021) </li>
+                            <li><strong>Magadh University</strong> — BCA (2014–2017)
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>Certifications</h3>
+                        <ul class="list">
+                            <li>SQL (Basic) </li>
+                            <li>Joining Data in SQL </li>
+                            <li>Introduction / Intermediate Python </li>
+                            <li>Introduction to Web Design & Development </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Langues</h3>
+                    <div class="pillRow">
+                        <span class="pillSmall">Anglais (bilingue)</span>
+                        <span class="pillSmall">Français (pro)</span>
+                        <span class="pillSmall">Hindi (bilingue)</span>
+                        <span class="pillSmall">Allemand (élémentaire)</span>
+                        <span class="pillSmall">Italien (élémentaire)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="sectionHead">
+                    <h2>Contact</h2>
+                    <p>Dispo pour opportunités / collaborations.</p>
+                </div>
+
+                <div class="grid2">
+                    <div class="card">
+                        <h3>Coordonnées</h3>
+                        <ul class="list">
+                            <li><strong>Téléphone :</strong> <a class="link" href="tel:+33751112483">+33 7 51 11 12
+                                    483</a></li>
+                            <li><strong>Email :</strong> <a class="link"
+                                    href="mailto:chandan.kumar@skema.edu">chandan.kumar@skema.edu</a></li>
+                            <li><strong>Autre email :</strong> <a class="link"
+                                    href="mailto:ckumar.europe@gmail.com">ckumar.europe@gmail.com</a></li>
+                            <li><strong>LinkedIn :</strong> <a class="link" target="_blank" rel="noopener"
+                                    href="https://www.linkedin.com/in/jesuischandan">linkedin.com/in/jesuischandan</a>
+                            </li>
+                        </ul>
+
+                        <div class="contactCtas">
+                            <a class="btn btn--primary"
+                                href="mailto:chandan.kumar@skema.edu?subject=Opportunity%20-%20Portfolio">Écrire un
+                                email</a>
+                            <button class="btn btn--ghost" id="copyPhoneBtn" type="button">Copier téléphone</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Message rapide</h3>
+                        <form id="quickForm">
+                            <label class="label" for="name">Nom</label>
+                            <input class="input" id="name" name="name" autocomplete="name" placeholder="Votre nom" />
+
+                            <label class="label" for="msg">Message</label>
+                            <textarea class="textarea" id="msg" name="msg" rows="5"
+                                placeholder="Ex : poste visé, contexte, timing…"></textarea>
+
+                            <button class="btn btn--primary" type="submit">Générer un email prêt à envoyer</button>
+                            <p class="muted small">Le bouton ouvre votre mail avec un texte pré-rempli (aucune
+                                donnée n’est envoyée sur un serveur).</p>
+                        </form>
+                    </div>
+                </div>
+
+                <footer class="footer">
+                    <p class="muted small">© <span id="year"></span> Chandan Kumar • Portfolio</p>
+                </footer>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal__overlay" data-close="true"></div>
+        <div class="modal__panel" role="document" aria-label="Détails du projet">
+            <button class="modal__close" id="modalClose" aria-label="Fermer">×</button>
+            <div id="modalContent"></div>
+        </div>
     </div>
-    <section>
-        <div class="intro">
-            <img src="cK - P02.gif" alt="Chandan" srcset="">
-            <p>I want to help others to make the right decisions, data-driven decisions</p>
-        </div>
-    </section>
-    <section id="services">
-        <div class="section">
-            <div class="service-intro">
-                <h2>SERVICES</h2>
-                <p>As a freelance data analyst and data scientist, I translate data into valuable and comprehensible insights. My goal is to improve results, make the right decisions and save costs.</p>
-                <p>I am experienced in machine learning, supervised and unsupervised algorithms and use data visualization techniques to present the results. I use SQL, R, Python, QlikView and Tableau for my data projects.</p>
-            </div>
-            <div class="services-list">
-                <div class="row">
-                    <div class="s-menu">
-                        <div class="services-list-img">
-                            <img src="Business-person-chart.png" alt="" srcset="">
-                        </div>
-                        <div class="services-text">
-                            <h3>Data Analysis</h3>
-                            <p>I am specialized in analyzing data. Results, trends and recommendations are clearly presented in reports or tools.</p>
-                        </div>
-                    </div>
-                    <div class="s-menu">
-                        <div class="services-list-img">
-                            <img src="Business-person-loop.png" alt="" srcset="">
-                        </div>
-                        <div class="services-text">
-                            <h3>Data analytics</h3>
-                            <p>Get more value from your data with prediction models and machine learning techniques, for example by predicting behavior or targeting the right customer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="s-menu">
-                        <div class="services-list-img">
-                            <img src="Business-dashboard.png" alt="" srcset="">
-                        </div>
-                        <div class="services-text">
-                            <h3>Dashboards</h3>
-                            <p>Dashboards show the most recent results in an interactive way. By clicking and drilling, you will examine trends and patterns yourself.</p>
-                        </div>
-                    </div>
-                    <div class="s-menu">
-                        <div class="services-list-img">
-                            <img src="Business-person-presentation.png" alt="" srcset="">
-                        </div>
-                        <div class="services-text">
-                            <h3>Advice and coaching projects</h3>
-                            <p>Before and during data related projects, I give advice on the progress of the project and I coach data analysts.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="s-menu">
-                        <div class="services-list-img">
-                            <img src="Business-person-interactive.png" alt="" srcset="">
-                        </div>
-                        <div class="services-text">
-                            <h3>(Interactive) infographics</h3>
-                            <p>Present your data in an inspiring way by using an infographic rather than a piece of text. I create interactive infographics which can be used internally or publicly.</p>
-                        </div>
-                    </div>
-                    <div class="s-menu">
-                        <div class="services-list-img">
-                            <img src="Business-website.png" alt="" srcset="">
-                        </div>
-                        <div class="services-text">
-                            <h3>Web Developer</h3>
-                            <p>As a web developer, I help to design and create the perfect website for starters and freelancers. The website is optimized for desktop and smartphone.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="about-me">
-        <div class="about-me">
-            <div class="about-text">
-                <h2>About me</h2>
-                <p>Hi, my name is Chandan and I work remotely as a freelance data scientist. I hold a Bachelor’s in Computer Applicaion and Master’s degree in Digital Business and Artificial Intelligence (Master of Science, Skema Business School, Paris and Sophia - Antipolis).<br><br>
 
-                    Since I was young, I have always enjoyed to solve puzzles. So that’s how I look at big data sets: to me it is one big puzzle I want to solve. Finding patterns nobody else sees is the challenge to me.<br><br>
-                    
-                    I have been working as a data scientist for more than three years with experience in transport, logistics and retail. I have worked for more than 25 companies which gives me the ability to translate complex questions into understandable insights.<br><br>
-                    
-                    Do you want to work together? Please reach out to me by e-mail.</p>
-            </div>
-            <div class="chandan-pic">
-                <img src="Chandan1.jpg" alt="Chandan Picture" srcset="">
-            </div>
-        </div>
-    </section>
+    <!-- Toast -->
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
-    <section id="portfolio">
-        <div class="section">
-            <h2>Portfolio</h2>
-            <h3><a href="https://jesuischandan.github.io/webcreatorspro/">WebCreatorPro</a></h3>
-
-        </div>
-    </section>
-
-    <section id="contact-me">
-        <div class="section">
-            <h2>Contact me</h2>
-            <p>chandankumar.paris@gmail.com</p>
-            <p><a href="www.linkedin.com/in/jesuischandan">LinkedIn</a></p>
-            <p>Location: </p>
-        </div>
-
-    </section>
-
-    <footer>
-        <div class="bottom">
-            <p>© 2023 Chandan KUMAR</p>
-        </div>
-        
-    </footer>
+    <script src="script.js"></script>
+    <script src="lang.js"></script>
 </body>
 
 </html>
